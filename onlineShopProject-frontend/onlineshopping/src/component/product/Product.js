@@ -11,7 +11,7 @@ import axios from "axios";
 export default function Product (props) {
     const value = props.product;
 
-    console.log("Images are", value)
+    // console.log("Images are", value)
 
     const onAddToCart = function (product) {
         (async function getData() {

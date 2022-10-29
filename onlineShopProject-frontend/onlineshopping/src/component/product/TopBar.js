@@ -36,7 +36,22 @@ export default function TopBar({onProductSearch, data}) {
         const newData=data.filter(prod => prod.name.toUpperCase().includes(searchString.toUpperCase()));
         onProductSearch(newData);}
 
+    const navigate = useNavigate();
+    const onShoppingCartClicked = function () {
+        navigate("/shoppingCart");
+    }
+    const [username, setUsername] = useState("");
+   function getUser() {
+       setUsername(sessionStorage.getItem("username"));
 
+
+   }
+    // console.log("user --"+username);
+   useEffect(() => {
+       getUser();
+   },[]);
+
+    // const firstName = username.split(".")[0];
     // useEffect( () => {
     //     onSearchClicked();
     // },[searchString])
@@ -56,10 +71,7 @@ export default function TopBar({onProductSearch, data}) {
         })();
     }*/
 
-    const navigate = useNavigate();
-    const onShoppingCartClicked = function () {
-        navigate("/shoppingCart");
-    }
+
 
     return (
         <MDBNavbar expand='lg' light bgColor='light'>
@@ -128,7 +140,7 @@ export default function TopBar({onProductSearch, data}) {
                                     <FontAwesomeIcon icon={faUser}/>
                                 </MDBDropdownToggle>
                                 <MDBDropdownMenu>
-                                    <MDBDropdownItem link>Username</MDBDropdownItem>
+                                    <MDBDropdownItem link>Hello {username?.split(".")[0]}</MDBDropdownItem>
                                     <MDBDropdownItem link>Sign out</MDBDropdownItem>
                                 </MDBDropdownMenu>
                             </MDBDropdown>

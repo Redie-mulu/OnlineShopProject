@@ -47,6 +47,7 @@ public class SecurityConfiguration {
                 // TODO Add the correct path for access
                 .antMatchers("/product/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/login/**").permitAll()
+//                .antMatchers( "/user/**").permitAll()
 //                .antMatchers("/products/**").hasAnyAuthority("ADMIN")
 //                .antMatchers("/products/**").hasAnyRole( "USER", "ADMIN")
 //                .antMatchers("/**").hasRole("ADMIN")

@@ -21,6 +21,7 @@ public class UserController {
 
     @GetMapping("/shoppingCart")
     public ShoppingCart getUsersShoppingCart() {
+        System.out.println(userService.getUserShoppingCart());
         return userService.getUserShoppingCart();
     }
      public void creatOrder(User user) {

@@ -4,7 +4,7 @@ import Products from "./Products";
 import Footer from "../shared/Footer";
 import NavigationDropDown from "./NavigationDropDown";
 import TopBar from "./TopBar";
-
+import ShoppingCartIcon from "./ShoppingCartIcon";
 
 
 
@@ -14,12 +14,12 @@ export default function DisplayProduct() {
         (async function getData() {
             const result = await axios.get("http://localhost:8084/product");
             const newData= result.data;
-            // console.log("newData", newData)
+            console.log("newData", newData)
             setData(newData);
         })();
 },[])
 
-
+    console.log("My data is ", data);
     return(
         <div>
             <TopBar data ={data} onProductSearch ={setData}  />

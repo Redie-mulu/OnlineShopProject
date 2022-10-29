@@ -11,14 +11,23 @@ import {
     MDBRow,
     MDBTypography,
 } from "mdb-react-ui-kit";
-import React from "react";
+import React, {useEffect} from "react";
 import {useNavigate} from "react-router-dom";
+import axios from "axios";
 
 export default function ShoppingCart() {
     const navigate = useNavigate();
     const onClickShoppingCart = function () {
         navigate("/product");
     }
+    // useEffect( () => {
+    //     (async function getData() {
+    //         const result = await axios.get("http://localhost:8084/user/shoppingCart");
+    //         const shoppingCart= result.data;
+    //         console.log("shoppingCart", shoppingCart);
+    //
+    //     })();
+    // },[])
     return(
         <section className="h-100 h-custom" style={{ backgroundColor: "#eee" }}>
             <MDBContainer className="py-5 h-100">
